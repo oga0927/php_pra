@@ -1,9 +1,8 @@
 <?php
 
-$array_member = [
-  'name' => 'ミッキー',
-  'height' => 170,
-  'park' => 'ディズニー'
-];
+$test_1 = 3;
+$test_2 = 4;
 
-echo $array_member['name'];
+$test_3 = $test_1 + $test_2;
+
+echo $test_3;
