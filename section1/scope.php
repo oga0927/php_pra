@@ -1,16 +1,12 @@
 <?php
 
-$globalVariable = 'グローバル変数です';
+$globalScope = 'グローバルな変数です';
 
-function checkScope($str){
-  $localVariable = 'ローカル変数です';
-  // global $globalVariable;
+
+function localScope($str)
+{
+  // $local = 'ローカルな変数です';
   echo $str;
 }
 
-echo $globalVariable;
-echo $localVariable;
-
-checkScope($globalVariable);
-
-?>
+localScope($globalScope);
