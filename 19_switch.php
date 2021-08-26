@@ -1,11 +1,14 @@
 <?php
-// switch文は使わないほうがいい
+// switch文は使わない
 // if文で処理するのが好ましい
 
-$data = 4;
+$data = '1';
+
+//== switch
+//=== 型も等しい
 
 switch ($data) {
-  case 1:
+  case $data === 1:
     echo '1です';
     break;
   case 2;
