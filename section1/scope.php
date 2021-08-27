@@ -2,7 +2,7 @@
 
 $globalScope = 'グローバルな変数です';
 
-function localScope()
+function localScope($val)
 {
   $localScope = 'ローカルな変数です';
   echo $localScope;
