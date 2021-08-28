@@ -38,10 +38,20 @@ if (!empty($_POST['btn_submit'])) {
 
 ?>
 
-<!DOCTYPE html>
-<meta charset="utf-8">
+<!doctype html>
+<html lang="en">
 
-<head></head>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <title>私は仕事が大好きです。</title>
+</head>
+
 
 <body>
 
@@ -140,59 +150,92 @@ if (!empty($_POST['btn_submit'])) {
 
     <?php endif; ?>
 
-    <form method="POST" action="input.php">
-      氏名
-      <input type="text" name="your_name" value="
-      <?php if (!empty($_POST['your_name'])) {
-        echo h($_POST['your_name']);
-      } ?>">
-      <br>
-      メールアドレス
-      <input type="email" name="email" value="
-      <?php if (!empty($_POST['email'])) {
-        echo h($_POST['email']);
-      } ?>">
-      <br>
-      ホームページ
-      <input type="url" name="url" value="
-      <?php if (!empty($_POST['url'])) {
-        echo h($_POST['url']);
-      } ?>">
-      <br>
-      性別
-      <input type="radio" name="gender" value="0" <?php if (isset($_POST['gender']) && $_POST['gender'] === '0') {
-                                                    echo 'checked';
-                                                  } ?>>男性
-      <input type="radio" name="gender" value="1" <?php if (isset($_POST['gender']) && $_POST['gender'] === '1') {
-                                                    echo 'checked';
-                                                  } ?>>女性
-      <br>
-      年齢
-      <select name="age">
-        <option value="">選択してください</option>
-        <option value="1">〜19歳</option>
-        <option value="2">20歳〜29歳</option>
-        <option value="3">30歳〜39歳</option>
-        <option value="4">40歳〜49歳</option>
-        <option value="5">50歳〜59歳</option>
-        <option value="6">60歳〜</option>
-      </select>
-      <br>
-      お問い合わせ内容
-      <textarea name="contact">
-<?php if (!empty($_POST['contact'])) {
-      echo h($_POST['contact']);
-    } ?>
-</textarea>
-      <br>
-      <input type="checkbox" name="caution" value="1">注意事項にチェックする
-      <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <method="POST" action="input.php">
+            <div class="form-group">
+              <label for="your_name">氏名</label>
+              <input type="text" class="form-control" id="your_name" name="your_name" value="
+              <?php if (!empty($_POST['your_name'])) {
+                echo h($_POST['your_name']);
+              } ?>" required>
+            </div>
 
-      <input type="submit" name="btn_confirm" value="確認する">
-      <input type="hidden" name="csrf" value="<?php echo $token; ?>">
-    </form>
-  <?php endif; ?>
+            <div class="form-group">
+              <label for="email">メールアドレス</label>
+              <input type="text" class="form-control" id="email" name="email" value="
+              <?php if (!empty($_POST['email'])) {
+                echo h($_POST['email']);
+              } ?>" required>
+            </div>
+            <div class="form-group">
+              <label for="url">ホームページ</label>
+              <input type="text" class="form-control" id="url" name="url" value="
+              <?php if (!empty($_POST['url'])) {
+                echo h($_POST['url']);
+              } ?>" required>
 
+              <div class="form-che   ck form-check-inline">
+
+                性別
+                <input type="radio" class="form-check-input" name="gender" id="gender" value="0" <?php if (isset($_POST['gender']) && $_POST['gender'] === '0') {
+                                                                                                    echo 'checked';
+                                                                                                  } ?>>
+                <label class="form-check-label" for="gender1">男性</label>
+                <input type="radio" class="form-check-input" name="gender" value="1" <?php if (isset($_POST['gender']) && $_POST['gender'] === '1') {
+                                                                                        echo 'checked';
+                                                                                      } ?>>
+                <label class="form-check-label" for="gender2">女性</label>
+              </div>
+
+              <div class="form-group">
+                <label for="age">年齢</label>
+                <select class="form-control" id="age" name="age">
+                  <option value="">選択してください</option>
+                  <option value="1">〜19歳</option>
+                  <option value="2">20歳〜29歳</option>
+                  <option value="3">30歳〜39歳</option>
+                  <option value="4">40歳〜49歳</option>
+                  <option value="5">50歳〜59歳</option>
+                  <option value="6">60歳〜</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact">お問い合わせ内容</label>
+                <textarea class="form-control" id="contact" name="contact">
+                  <?php if (!empty($_POST['contact'])) {
+                    echo h($_POST['contact']);
+                  } ?>
+                </textarea>
+              </div>
+
+              <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="caution" name="caution" value="1">
+                <label class="form-check-label" for="caution">注意事項にチェックする</label>
+              </div>
+
+              <input class="btn btn-info" type="submit" name="btn_confirm" value="確認する">
+              <input type="hidden" name="csrf" value="<?php echo $token; ?>">
+              </form>
+              </dev>
+              </dev>
+              </dev>
+
+            <?php endif; ?>
+
+            <!-- Optional JavaScript; choose one of the two! -->
+
+            <!-- Option 1: Bootstrap Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+            <!-- Option 2: Separate Popper and Bootstrap JS -->
+            <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+</body>
 </body>
 
 </html>

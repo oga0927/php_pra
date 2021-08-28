@@ -9,6 +9,17 @@ function validation($request)
     $errors[] = '氏名は20文字以内で入力してください';
   }
 
+  if (empty($request['email']) || !filter_var($request['email'], FILTER_VALIDATE_EMAIL,)) {
+    $errors[] = 'メールアドレスを正しく入力してください';
+  }
+
+  // 空ではない時の条件
+  if (!empty($request['url'])) {
+    if (!filter_var($request['url'], FILTER_VALIDATE_URL)) {
+      $errors[] = 'ホームページは正しく入力してください';
+    }
+  }
+
   if (!isset($request['gender'])) {
     $errors[] = '性別を選択してください';
   }
