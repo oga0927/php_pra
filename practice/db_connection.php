@@ -1,7 +1,7 @@
 <?php
 
-const DB_HOST = 'mysql:dbname=udemy_php;host=127.0.0.1;charset=utf8';
-const DB_USER = 'php_user';
+const DB_HOST = 'mysql:dbname=practice_php;host=127.0.0.1;charset=utf8';
+const DB_USER = 'user_php';
 const DB_PASSWORD = 'password123';
 
 
