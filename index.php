@@ -1,10 +1,10 @@
 <?php
 
-$test = 123;
-var_dump($test);
-echo $test;
+$character = 'ミッキー';
 
-exit;
-$test_2 = 456;
-
-echo $test_2;
+if ($character === 'ミッキー') {
+  if ($character)
+    echo $character . 'は' . 'スーパースターです';
+} else {
+  echo $character . 'は' . 'スターです';
+}
